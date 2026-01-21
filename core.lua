@@ -47,18 +47,18 @@ end
 
 function TSB.RegisterModule(name, spec)
     if type(name) ~= "string" then
-        error("TSB.RegisterModule: name must be a string")
+        error("[TSB] RegisterModule: name must be a string")
     end
     if type(spec) ~= "table" then
-        error("TSB.RegisterModule: spec must be a table")
+        error("[TSB] RegisterModule: spec must be a table")
     end
 
     -- optional sanity checks
     if spec.defaults ~= nil and type(spec.defaults) ~= "table" then
-        error(("TSB.RegisterModule(%s): defaults must be a table"):format(name))
+        error(("[TSB] RegisterModule(%s): defaults must be a table"):format(name))
     end
     if spec.init ~= nil and type(spec.init) ~= "function" then
-        error(("TSB.RegisterModule(%s): init must be a function"):format(name))
+        error(("[TSB] RegisterModule(%s): init must be a function"):format(name))
     end
 
     TSB:DebugVerbose("RegisterModule: %s", name)
@@ -88,21 +88,21 @@ local function InitDB()
 end
 
 local function InitModules()
-    TSB:DebugInfo("Starting module initialization...")
+    TSB:DebugInfo("Starting initialization of all modules...")
     for name, module in pairs(TSB._modules) do
         if module.init then
-            TSB:DebugVerbose("Initializing module: " .. name)
+            TSB:DebugInfo("Loading module: %s", name)
             local ok, err = pcall(module.init)
             if not ok then
-                TSB:DebugError("Init error in module '" .. name .. "': " .. tostring(err))
+                TSB:DebugError("Init error in module '%s': %s", name, tostring(err))
             else
-                TSB:DebugInfo("Module initialized: " .. name)
+                TSB:DebugVerbose("Module initialized: %s", name)
             end
         else
-            TSB:DebugVerbose("Module registered but no init: " .. name)
+            TSB:DebugVerbose("Module registered but no init: %s", name)
         end
     end
-    TSB:DebugInfo("Module initialization complete")
+    TSB:DebugInfo("All modules initialized")
 end
 
 local f = CreateFrame("Frame")
