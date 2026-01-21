@@ -2,7 +2,6 @@
 -- Action Layer: Business logic and validation for user-facing commands
 
 if not TSB then TSB = {} end
-TSB.Print("Loading module: actions")
 
 TSB.Actions = TSB.Actions or {}
 

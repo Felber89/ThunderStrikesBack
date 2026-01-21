@@ -3,8 +3,6 @@
 if not TSB then TSB = {} end
 if not TSB._modules then TSB._modules = {} end
 
-TSB.Print("Loading module: debug")
-
 -- Note: We log after stub functions exist
 TSB.RegisterModule("Debug", {
   defaults = {

@@ -2,8 +2,6 @@
 
 if not TSB then TSB = {} end
 
-TSB.Print("Loading module: rateLimit")
-
 TSB.RegisterModule("RateLimit", {
   defaults = {
     rateLimit = {
