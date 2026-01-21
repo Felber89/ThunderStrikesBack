@@ -12,7 +12,9 @@ TSB.RegisterModule("Debug", {
   }
 })
 
-local PREFIX = "|cffff8800[TSB]|r "
+local PREFIX_ERROR = "|cffff0000[TSB:ERROR]|r "
+local PREFIX_INFO = "|cffff8800[TSB:INFO]|r "
+local PREFIX_VERBOSE = "|cffff8800[TSB:VERBOSE]|r "
 
 local function ToString(v)
     if v == nil then return "nil" end
@@ -33,7 +35,16 @@ function TSB:Debug(level, message, ...)
         formatted = message .. " " .. ToString(...)
     end
 
-    print(PREFIX .. formatted)
+    local prefix
+    if level == 1 then
+        prefix = PREFIX_ERROR
+    elseif level == 2 then
+        prefix = PREFIX_INFO
+    else
+        prefix = PREFIX_VERBOSE
+    end
+
+    print(prefix .. formatted)
 end
 
 -- Convenience wrappers (optional, but nice)
