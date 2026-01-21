@@ -69,35 +69,16 @@ TSB.RegisterModule("Minimap", {
     end
 
     local function ShowOptionsMenu()
-      TSB:DebugVerbose("Minimap: showing options menu")
-      if not EasyMenu then
-        TSB:DebugError("Minimap.ShowOptionsMenu: EasyMenu not available")
-        TSB.Print("Options menu not available (EasyMenu missing).")
-        return
+      TSB:DebugVerbose("Minimap: right-click - opening UI with Options tab")
+      
+      -- Open main UI window with Options tab
+      if TSB.UI then
+        TSB.UI:Open()
+        TSB.UI:SelectTab("Options")
+      else
+        TSB:DebugError("Minimap: TSB.UI not available")
+        TSB.Print("UI not available yet.")
       end
-
-      local menu = {
-        { text = "ThunderStrikesBack Options", isTitle = true, notCheckable = true },
-
-        -- Minimal options for now (expand later)
-        {
-          text = "Hide Minimap Icon",
-          checked = function() return TSB:GetDBValue("minimap", "hide") end,
-          keepShownOnClick = true,
-          func = function()
-            SetMinimapHidden(not TSB:GetDBValue("minimap", "hide"))
-          end
-        },
-
-        { text = "Show /tsb Help", notCheckable = true, func = function()
-            TSB.Print("Type /tsb for commands.")
-          end
-        },
-
-        { text = "Close", notCheckable = true, func = function() CloseDropDownMenus() end },
-      }
-
-      EasyMenu(menu, optionsMenuFrame, "cursor", 0, 0, "MENU")
     end
 
     -- Create LDB object for LibDBIcon
