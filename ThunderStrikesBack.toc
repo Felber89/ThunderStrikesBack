@@ -1,0 +1,21 @@
+## Interface: 20505
+## Title: ThunderStrikesBack
+## Notes: ThunderStrikesBack restores the honor of the noble PvE server Thunderstrike and punishes the players from you-know-which server
+## Author: Felber
+## Version: 0.1.0
+## Category: PvP
+## IconTexture: Interface\AddOns\ThunderStrikesBack\textures\icon
+## SavedVariables: TSB_DB
+## OptionalDeps: LibStub, LibDataBroker-1.1, LibDBIcon-1.0
+
+libs/LibDBIcon-1.0/LibStub/LibStub.lua
+libs/LibDBIcon-1.0/CallbackHandler-1.0/CallbackHandler-1.0.lua
+libs/LibDBIcon-1.0/LibDataBroker-1.1/LibDataBroker-1.1.lua
+libs/LibDBIcon-1.0/LibDBIcon-1.0/LibDBIcon-1.0.lua
+
+core.lua
+modules/actions.lua
+modules/debug.lua
+modules/rateLimit.lua
+modules/chat.lua
+modules/minimap.lua
