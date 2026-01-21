@@ -79,7 +79,7 @@ SlashCmdList["TSB"] = function(msg)
     end
 
     -- Help text (keep it short)
-    print(PREFIX .. "Commands:")
-    print(PREFIX .. "/tsb debug            - show debug level")
-    print(PREFIX .. "/tsb debug 0..3       - set debug level (0=off)")
+    TSB.Print("Commands:")
+    TSB.Print("/tsb debug            - show debug level")
+    TSB.Print("/tsb debug 0..3       - set debug level (0=off)")
 end
