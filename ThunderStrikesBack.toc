@@ -19,3 +19,6 @@ modules/debug.lua
 modules/rateLimit.lua
 modules/chat.lua
 modules/minimap.lua
+ui/tabs/jokes.lua
+ui/tabs/options.lua
+ui/mainframe.lua

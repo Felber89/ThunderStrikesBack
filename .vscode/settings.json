@@ -98,7 +98,8 @@
         "UIDropDownMenu_JustifyText",
         "UIDropDownMenu_SetWidth",
         "UIDropDownMenu_SetText",
-        "LE_PARTY_CATEGORY_INSTANCE"
+        "LE_PARTY_CATEGORY_INSTANCE",
+        "UISpecialFrames"
     ],
     "Lua.diagnostics.disable": [
         "assign-type-mismatch"
