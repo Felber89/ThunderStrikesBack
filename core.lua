@@ -2,7 +2,7 @@
 
 TSB          = TSB or {}
 TSB.name     = "ThunderStrikesBack"
-TSB.prefix   = "|cff00ff00TSB|r"
+TSB.prefix   = "|cff0070ddTSB|r"
 
 TSB._modules = TSB._modules or {} -- array for modules
 
