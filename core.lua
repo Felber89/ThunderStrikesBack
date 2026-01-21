@@ -12,14 +12,17 @@ function TSB.Print(msg)
 end
 
 -- Stub implementations (will be overridden by modules/debug.lua)
+---@diagnostic disable-next-line: duplicate-set-field
 function TSB:DebugError(message, ...)
     -- Stub: does nothing until debug module loads
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function TSB:DebugInfo(message, ...)
     -- Stub: does nothing until debug module loads
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function TSB:DebugVerbose(message, ...)
     -- Stub: does nothing until debug module loads
 end

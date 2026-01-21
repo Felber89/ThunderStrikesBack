@@ -39,14 +39,17 @@ function TSB:Debug(level, message, ...)
 end
 
 -- Convenience wrappers (optional, but nice)
+---@diagnostic disable-next-line: duplicate-set-field
 function TSB:DebugError(message, ...)
     self:Debug(1, message, ...)
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function TSB:DebugInfo(message, ...)
     self:Debug(2, message, ...)
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function TSB:DebugVerbose(message, ...)
     self:Debug(3, message, ...)
 end
