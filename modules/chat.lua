@@ -1,7 +1,5 @@
 -- chat.lua
 
-if not TSB then TSB = {} end
-
 TSB.RegisterModule("Chat", {
   defaults = {
     chat = {

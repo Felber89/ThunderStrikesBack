@@ -1,6 +1,5 @@
 -- debug.lua
 
-if not TSB then TSB = {} end
 if not TSB._modules then TSB._modules = {} end
 
 -- Note: We log after stub functions exist

@@ -1,7 +1,5 @@
 -- rateLimit.lua
 
-if not TSB then TSB = {} end
-
 TSB.RegisterModule("RateLimit", {
   defaults = {
     rateLimit = {

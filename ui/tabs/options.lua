@@ -1,7 +1,6 @@
 -- ui/tabs/options.lua
 -- Options tab content
 
-if not TSB then TSB = {} end
 TSB.UI_Options = TSB.UI_Options or {}
 
 function TSB.UI_Options.CreateContent(parent)

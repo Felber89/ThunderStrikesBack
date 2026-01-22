@@ -1,7 +1,6 @@
 -- ui/tabs/jokes.lua
 -- Jokes tab content
 
-if not TSB then TSB = {} end
 TSB.UI_Jokes = TSB.UI_Jokes or {}
 
 function TSB.UI_Jokes.CreateContent(parent)

@@ -1,8 +1,6 @@
 -- actions.lua
 -- Action Layer: Business logic and validation for user-facing commands
 
-if not TSB then TSB = {} end
-
 TSB.Actions = TSB.Actions or {}
 
 -- SetDebugLevel(level)

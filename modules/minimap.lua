@@ -1,7 +1,5 @@
 -- minimap.lua
 
-if not TSB then TSB = {} end
-
 local LDB = LibStub("LibDataBroker-1.1", true)
 local LDBIcon = LibStub("LibDBIcon-1.0", true)
 
