@@ -71,26 +71,3 @@ function TSB:GetDebugLevel()
     return self:GetDBValue("debug", "debugLevel") or 0
 end
 
--- Slash command:
--- /tsb debug
--- /tsb debug 0..3
-SLASH_TSB1 = "/tsb"
-SlashCmdList["TSB"] = function(msg)
-    msg = msg or ""
-    msg = msg:lower()
-
-    local cmd, arg = msg:match("^(%S+)%s*(.-)%s*$")
-    if cmd == "debug" then
-        if arg == nil or arg == "" then
-            TSB.Actions:ShowDebugLevel()
-        else
-            TSB.Actions:SetDebugLevel(arg)
-        end
-        return
-    end
-
-    -- Help text (keep it short)
-    TSB.Print("Commands:")
-    TSB.Print("/tsb debug            - show debug level")
-    TSB.Print("/tsb debug 0..3       - set debug level (0=off)")
-end
