@@ -70,11 +70,13 @@ TSB.RegisterModule("Minimap", {
       TSB:DebugVerbose("Minimap: right-click - opening UI with Options tab")
       
       -- Open main UI window with Options tab
-      if TSB.UI then
-        TSB.UI:Open()
-        TSB.UI:SelectTab("Options")
+      if TSB.Actions then
+        TSB.Actions:OpenUI()
+        if TSB.UI then
+          TSB.UI:SelectTab("Options")
+        end
       else
-        TSB:DebugError("Minimap: TSB.UI not available")
+        TSB:DebugError("Minimap: TSB.Actions not available")
         TSB.Print("UI not available yet.")
       end
     end

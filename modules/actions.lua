@@ -65,3 +65,48 @@ function TSB.Actions:ShowDebugLevel()
     
     return level
 end
+
+-- ToggleUI()
+-- Opens or closes the main UI window
+function TSB.Actions:ToggleUI()
+    TSB:DebugVerbose("Actions:ToggleUI() called")
+    
+    if not TSB.UI then
+        TSB:DebugError("TSB.UI not available")
+        TSB.Print("Error: UI module not loaded")
+        return false
+    end
+    
+    TSB.UI:Toggle()
+    return true
+end
+
+-- OpenUI()
+-- Opens the main UI window
+function TSB.Actions:OpenUI()
+    TSB:DebugVerbose("Actions:OpenUI() called")
+    
+    if not TSB.UI then
+        TSB:DebugError("TSB.UI not available")
+        TSB.Print("Error: UI module not loaded")
+        return false
+    end
+    
+    TSB.UI:Open()
+    return true
+end
+
+-- CloseUI()
+-- Closes the main UI window
+function TSB.Actions:CloseUI()
+    TSB:DebugVerbose("Actions:CloseUI() called")
+    
+    if not TSB.UI then
+        TSB:DebugError("TSB.UI not available")
+        TSB.Print("Error: UI module not loaded")
+        return false
+    end
+    
+    TSB.UI:Close()
+    return true
+end
