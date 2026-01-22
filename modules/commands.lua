@@ -1,17 +1,21 @@
 -- commands.lua
 -- Chat command handler for /tsb
 
+local function ShowHelp()
+  TSB.Print("Commands:")
+  TSB.Print("/tsb options          - open UI on Options tab")
+  TSB.Print("/tsb debug            - show debug level")
+  TSB.Print("/tsb debug 0..3       - set debug level (0=off)")
+end
+
 SLASH_TSB1 = "/tsb"
 SlashCmdList["TSB"] = function(msg)
   msg = msg or ""
-  msg = msg:lower():trim()
+  msg = strtrim(msg:lower())
   
   -- Empty command = show help
   if msg == "" then
-    TSB.Print("Commands:")
-    TSB.Print("/tsb options          - open UI on Options tab")
-    TSB.Print("/tsb debug            - show debug level")
-    TSB.Print("/tsb debug 0..3       - set debug level (0=off)")
+    ShowHelp()
     return
   end
 
@@ -29,16 +33,10 @@ SlashCmdList["TSB"] = function(msg)
   
   -- /tsb options (also accepts: option, general)
   if cmd == "options" or cmd == "option" or cmd == "general" then
-    TSB.Actions:OpenUI()
-    if TSB.UI then
-      TSB.UI:SelectTab("Options")
-    end
+    TSB.Actions:OpenUIWithTab("Options")
     return
   end
 
-  -- Help text
-  TSB.Print("Commands:")
-  TSB.Print("/tsb options          - open UI on Options tab")
-  TSB.Print("/tsb debug            - show debug level")
-  TSB.Print("/tsb debug 0..3       - set debug level (0=off)")
+  -- Unknown command = show help
+  ShowHelp()
 end

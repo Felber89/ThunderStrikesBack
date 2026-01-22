@@ -110,3 +110,19 @@ function TSB.Actions:CloseUI()
     TSB.UI:Close()
     return true
 end
+
+-- OpenUIWithTab(tabName)
+-- Opens the main UI window and selects a specific tab
+function TSB.Actions:OpenUIWithTab(tabName)
+    TSB:DebugVerbose("Actions:OpenUIWithTab() called with tab: %s", tabName)
+    
+    if not TSB.UI then
+        TSB:DebugError("TSB.UI not available")
+        TSB.Print("Error: UI module not loaded")
+        return false
+    end
+    
+    TSB.UI:Open()
+    TSB.UI:SelectTab(tabName)
+    return true
+end
